@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Category Cards</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #fff;
+    padding: 40px;
+  }
+
+  .card-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .category-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 16px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden; /* keeps the zoomed image inside the rounded corners */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(198, 40, 40, 0.18);
+    border-color: #c62828;
+  }
+
+  .category-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: transform 0.25s ease;
+  }
+
+  .category-card:hover img {
+    transform: scale(1.08);
+  }
+
+  .category-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .category-text {
+    text-align: left;
+  }
+
+  .category-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+  }
+
+  .category-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f5a623; /* amber/orange */
+    margin: 0;
+  }
+
+  .arrow-btn {
+    background: #c62828; /* red, matches brand */
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .arrow-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
+
+  /* nudge the arrow right when the whole card is hovered */
+  .category-card:hover .arrow-btn {
+    transform: translateX(4px);
+    background: #a81f1f;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-row">
+
+  <div class="category-card">
+    <img src="images/breakfast.png" alt="Breakfast">
+    <div class="category-info">
+      <div class="category-text">
+        <p class="category-title">Breakfast</p>
+        <p class="category-count">8 Items</p>
+      </div>
+      <button class="arrow-btn" aria-label="View Breakfast">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="images/combo.png" alt="Combo">
+    <div class="category-info">
+      <div class="category-text">
+        <p class="category-title">Combo</p>
+        <p class="category-count">12 Items</p>
+      </div>
+      <button class="arrow-btn" aria-label="View Combo">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="category-card">
+    <img src="images/bakery.png" alt="Bakery">
+    <div class="category-info">
+      <div class="category-text">
+        <p class="category-title">Bakery</p>
+        <p class="category-count">15 Items</p>
+      </div>
+      <button class="arrow-btn" aria-label="View Bakery">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

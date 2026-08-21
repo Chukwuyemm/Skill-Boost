@@ -1,0 +1,8 @@
+padding is the space between the content 
+margin is the space outside the content 
+
+flex
+Its is divided into flex container and flex content
+flex affects the children
+
+box shadow generator 

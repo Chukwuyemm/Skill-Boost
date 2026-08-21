@@ -1,0 +1,30 @@
+/* Combinator selector */
+
+div h5,
+div h6 {
+  background-color: blue;
+}
+
+/* Child selector */
+section > h5 {
+  background-color: green;
+}
+
+ /* Descendants selector */
+section > div > h5 {
+  background-color: purple;
+}
+
+/* pseudo-classes */
+It affecs the state of an element.It also happens based on interaction or structure of position
+
+it is broken into two:
+Some pseudo classes deals with users interaction Example:focus
+
+While some deals with structure of the page example div>p:nth-of-type()
+
+div>p:nth-child()
+
+font awesome
+
+div*6 duplicaes the div 6 times

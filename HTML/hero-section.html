@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hero Section</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 60px 40px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ---------- LEFT: text column ---------- */
+  .hero-text .eyebrow {
+    color: #c62828;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 8px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+  }
+
+  .hero-text h1 span {
+    color: #c62828; /* "Delicious Food" in red */
+  }
+
+  .hero-text p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 380px;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .order-btn {
+    background: #c62828;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .play-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #c62828;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .play-btn svg { width: 16px; height: 16px; fill: #fff; }
+
+  /* ---------- RIGHT: burger image column ---------- */
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* the dark red rounded card sitting behind the burger */
+  .burger-card {
+    background: #7a1414; /* deep red */
+    border-radius: 24px;
+    width: 340px;
+    height: 340px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible; /* lets the burger spill above the card */
+  }
+
+  /* the burger + flying ingredients image itself */
+  .burger-card img {
+    position: absolute;
+    bottom: -20px;         /* anchor near the bottom of the card */
+    width: 115%;           /* slightly larger than the card so it overflows */
+    max-width: none;
+    z-index: 2;
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.25));
+  }
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  <div class="hero-text">
+    <p class="eyebrow">Welcome</p>
+    <h1>Enjoy Your<br><span>Delicious Food</span></h1>
+    <p>We well serve tasty food, 100% pure &amp; fresh, hot – with love, so you would love it even more.</p>
+    <div class="hero-cta">
+      <button class="order-btn">Order Now</button>
+      <button class="play-btn" aria-label="Play video">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="burger-card">
+      <!-- swap this src for your extracted burger PNG, e.g. 01_hero_burger.png
+           (ideally just the cutout burger+ingredients on transparent bg,
+           since this template already draws its own red card behind it) -->
+      <img src="images/burger.png" alt="Burger with flying ingredients">
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

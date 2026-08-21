@@ -1,0 +1,22 @@
+p.Experiment {
+  color: brown;
+}
+
+/* Combinator selector */
+
+div h5,
+div h6 {
+  background-color: blue;
+}
+
+/* Child selector */
+section > h5 {
+  background-color: green;
+}
+
+ /* Descendants selector */
+section > div > h5 {
+  background-color: purple;
+}
+
+/* pseudo-classes */
