@@ -1,11 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Lilita+One&display=swap");
 
-.margin{
-    margin-top: 4rem;
+.margin {
+  margin-top: 2rem;
 }
 
 .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 800;
-  
 }
+
+@keyframes roll-alert {
+        from {
+          transform: translateX(100vw);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      .alert-roll {
+        animation: roll-alert 20s linear infinite;}

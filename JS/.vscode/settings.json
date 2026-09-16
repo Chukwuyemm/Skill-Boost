@@ -1,0 +1,4 @@
+{
+  "js/ts.suggest.jsdoc.enabled": false,
+  "js/ts.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false
+}

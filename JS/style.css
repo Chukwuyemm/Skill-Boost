@@ -1,0 +1,30 @@
+#courses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100px;
+    
+}
+
+.course{
+    background-color: red;
+    padding: 0.5rem;
+    color: white;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+button{
+    outline: 1px solid black;
+    border: none;
+    height: 50px;
+    width: fit-content;
+}
+
+#form{
+    
+}

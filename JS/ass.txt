@@ -1,0 +1,31 @@
+A calculator that
+
+
+
+a movie ticket site
+There should be name,age,and phone number(store as an object)
+5 movies displayed and the movies there(titles,ratingand price)
+How many tickets do you want to purchase
+select if you're purchasing for regular or premium
+Ask if they want to purchase snack if yes add the snacks to to their balance  if no go to checkout 
+Ask for your balance and if balance is greater then pay,else insufficient funds
+
+
+
+
+query selector select both id and class name
+
+
+swiper studio
+framermotion
+
+study regexp pattern
+
+Learning Management System
+1.User comes to the site 
+2.All courses are displayed 
+
+the balance won't be concatenate
+
+
+

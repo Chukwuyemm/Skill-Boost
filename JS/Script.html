@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reel &amp; Row | Movie Tickets</title>
+    <script defer src="./script2.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <style>
+      :root {
+        --ink: #17212b;
+        --muted: #66727d;
+        --paper: #f7f4ee;
+        --card: #fffdf9;
+        --line: #ded9d0;
+        --coral: #e45f46;
+        --teal: #257d78;
+        --yellow: #f1c75b;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        opacity: .34;
+        background-image: radial-gradient(#d4cec3 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px clamp(20px, 6vw, 88px);
+      }
+      .brand { font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; }
+      .brand span { color: var(--coral); }
+      .step { color: var(--muted); font: 600 .76rem/1.2 Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+      main { width: min(1120px, calc(100% - 40px)); margin: 24px auto 80px; }
+      .intro { max-width: 650px; margin-bottom: 42px; }
+      h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: .94; font-weight: 400; }
+      .intro p { margin: 0; color: var(--muted); font: 1rem/1.6 Arial, sans-serif; }
+      .layout { display: grid; grid-template-columns: 1.35fr .85fr; gap: 28px; align-items: start; }
+      .panel { padding: clamp(22px, 4vw, 40px); background: var(--card); border: 1px solid var(--line); box-shadow: 8px 8px 0 #e8e1d5; }
+      .panel h2 { margin: 0 0 22px; font-size: 1.55rem; font-weight: 400; }
+      .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+      label { display: grid; gap: 7px; color: var(--muted); font: 700 .73rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+      label.full { grid-column: 1 / -1; }
+      input, select { width: 100%; padding: 13px 14px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 0; font: 1rem Georgia, serif; }
+      input:focus, select:focus { outline: 2px solid var(--yellow); outline-offset: 2px; }
+      fieldset { margin: 28px 0 0; padding: 0; border: 0; }
+      legend { margin-bottom: 14px; color: var(--muted); font: 700 .73rem/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+      .movies { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .movie { position: relative; display: grid; gap: 8px; min-height: 136px; padding: 18px; background: #eef3ee; border: 1px solid transparent; cursor: pointer; }
+      .movie:nth-child(2), .movie:nth-child(5) { background: #f8e9e1; }
+      .movie:nth-child(3) { background: #e8eff0; }
+      .movie:has(input:checked) { border-color: var(--coral); box-shadow: inset 0 -4px 0 var(--coral); }
+      .movie input { position: absolute; width: auto; accent-color: var(--coral); }
+      .movie-title { padding-right: 20px; font-size: 1.15rem; }
+      .movie-meta { color: var(--muted); font: .76rem Arial, sans-serif; }
+      .price { margin-top: auto; color: var(--teal); font: 700 .95rem Arial, sans-serif; }
+      .purchase { display: grid; gap: 19px; }
+      .choice-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .choice { position: relative; }
+      .choice input { position: absolute; opacity: 0; }
+      .choice span { display: block; padding: 14px; text-align: center; border: 1px solid var(--line); cursor: pointer; font-size: 1rem; }
+      .choice input:checked + span { color: #fff; background: var(--teal); border-color: var(--teal); }
+      .summary { position: sticky; top: 20px; background: var(--ink); color: #fff; }
+      .summary h2 { color: var(--yellow); }
+      .summary p { color: #bac4c7; font: .9rem/1.5 Arial, sans-serif; }
+      .summary-list { display: grid; gap: 13px; margin: 26px 0; padding: 0; list-style: none; font: .92rem Arial, sans-serif; }
+      .summary-list li { display: flex; justify-content: space-between; gap: 15px; padding-bottom: 13px; border-bottom: 1px solid #3b4850; }
+      .summary-list strong { color: #fff; font-weight: 600; text-align: right; }
+      .total { display: flex; justify-content: space-between; margin: 22px 0 8px; font-size: 1.3rem; }
+      .total strong { color: var(--yellow); }
+      button { width: 100%; padding: 15px; border: 0; color: #fff; background: var(--coral); cursor: pointer; font: 700 .78rem Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+      button:hover { background: #c94d38; }
+      .result { display: none; margin-top: 18px; padding: 15px; font: .9rem/1.45 Arial, sans-serif; }
+      .result.show { display: block; }
+      .result.success { color: #164d45; background: #d9eee7; }
+      .result.error { color: #822f24; background: #f8d8d0; }
+      @media (max-width: 760px) {
+        .topbar { padding: 20px; }
+        main { width: min(100% - 28px, 600px); margin-top: 10px; }
+        .layout { grid-template-columns: 1fr; }
+        .summary { position: static; }
+      }
+      @media (max-width: 460px) {
+        .form-grid, .movies { grid-template-columns: 1fr; }
+        label.full { grid-column: auto; }
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- <header class="topbar">
+      <div class="brand">reel <span>&amp;</span> row</div>
+      <div class="step">Tonight's screening desk</div>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Pick a story.<br />Take a seat.</h1>
+        <p>Reserve your place in the dark. Choose a film, tell us who is coming, and we will handle the rest.</p>
+      </section>
+      <div class="layout">
+        <form class="panel purchase" id="booking-form">
+          <h2>Your booking</h2>
+          <div class="form-grid">
+            <label>Full name <input id="name" type="text" required placeholder="Alex Morgan" /></label>
+            <label>Age <input id="age" type="number" min="1" max="120" required placeholder="25" /></label>
+            <label class="full">Phone number <input id="phone" type="tel" required placeholder="080 1234 5678" /></label>
+          </div>
+          <fieldset>
+            <legend>Choose a movie</legend>
+            <div class="movies">
+              <label class="movie"><input type="radio" name="movie" value="Midnight Signal" data-price="3500" data-rating="PG-13" required /><span class="movie-title">Midnight Signal</span><span class="movie-meta">PG-13 · 2h 08m</span><span class="price">N3,500</span></label>
+              <label class="movie"><input type="radio" name="movie" value="The Last Garden" data-price="3000" data-rating="PG" /><span class="movie-title">The Last Garden</span><span class="movie-meta">PG · 1h 52m</span><span class="price">N3,000</span></label>
+              <label class="movie"><input type="radio" name="movie" value="Orbit 9" data-price="4000" data-rating="12A" /><span class="movie-title">Orbit 9</span><span class="movie-meta">12A · 2h 21m</span><span class="price">N4,000</span></label>
+              <label class="movie"><input type="radio" name="movie" value="After the Rain" data-price="2800" data-rating="G" /><span class="movie-title">After the Rain</span><span class="movie-meta">G · 1h 44m</span><span class="price">N2,800</span></label>
+              <label class="movie"><input type="radio" name="movie" value="Neon Hearts" data-price="3200" data-rating="16" /><span class="movie-title">Neon Hearts</span><span class="movie-meta">16 · 1h 59m</span><span class="price">N3,200</span></label>
+            </div>
+          </fieldset>
+          <div class="form-grid">
+            <label>Tickets <input id="tickets" type="number" min="1" max="10" value="1" required /></label>
+            <label>Ticket type<select id="ticket-type"><option value="regular" data-extra="0">Regular · +N0</option><option value="premium" data-extra="1500">Premium · +N1,500</option></select></label>
+            <label>Snacks<select id="snack"><option value="none" data-price="0">No snacks</option><option value="popcorn" data-price="1200">Popcorn · N1,200</option><option value="combo" data-price="2500">Popcorn + drink · N2,500</option></select></label>
+            <label>Available balance <input id="balance" type="number" min="0" required placeholder="50000" /></label>
+          </div>
+          <button type="submit">Confirm booking</button>
+          <div class="result" id="result" role="status"></div>
+        </form>
+        <aside cla ss="panel summary">
+          <h2>Order total</h2>
+          <p>Your ticket details will appear here as you build the booking.</p>
+          <ul class="summary-list">
+            <li><span>Film</span><strong id="summary-movie">Not selected</strong></li>
+            <li><span>Tickets</span><strong id="summary-tickets">1 regular</strong></li>
+            <li><span>Snacks</span><strong id="summary-snack">None</strong></li>
+          </ul>
+          <div class="total"><span>Total</span><strong id="summary-total">N0</strong></div>
+        </aside>
+      </div>
+    </main>
+
+    <p id="welcome">How is your class going?</p>
+    <ul>
+      <li class="my-list">Rice</li>
+      <li class="my-list">rice</li>
+      <li class="my-list">rice</li>
+      <li class="my-list">rice</li>
+    </ul> -->
+
+     <!-- <div id="courses"></div>
+    <div>
+      <p>Total Price: <span id="course-sum"></span></p>
+      <button>Pay</button>
+    </div>
+
+    <div id="reg-form">
+      <form>
+        <input type="text" placeholder="Enter Name" />
+        <input type="email" placeholder="Enter Email" />
+      </form>
+
+      <button>Submit</button>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
+    </div>  -->
+
+
+    <div id="to-do">
+
+    </div>
+
+    <button id="easy">Easy</button>
+    <button id="medium">Medium</button>
+  </body>
+</html>

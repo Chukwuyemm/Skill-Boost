@@ -1,4 +1,0 @@
-Assignment 
-Why can't we use var
-
-Data structure

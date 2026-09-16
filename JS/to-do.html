@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome <span id="user-name"></span></h1>
+
+    <button id="get-user">get User</button>
+  </body>
+
+  <form id="todo-form">
+    <input type="text" id="todo-title" placeholder="Your TODO" />
+    <select id="todo-type">
+      <option value="">Select Type</option>
+      <option value="personal">Personal</option>
+      <option value="work">Work</option>
+    </select>
+    <br /><br /><br />
+    <button type="submit">Add TODO</button>
+    <br /><br /><br />
+  </form>
+
+  <div>
+    <h1>TODO List (<span id="todo-count">0</span>)</h1>
+
+    <ul id="todos-cont"></ul>
+  </div>
+
+  <script src="./to-do.js"></script>
+</html>
